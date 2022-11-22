@@ -36,8 +36,10 @@ public class Main {
 //        Напишите программу, которая выводит в консоль все високосные года, начиная с 1904 года до 2096.
 //        В консоль результат должен выводиться в формате "… год является високосным".
         System.out.println("Задача 2.1");
-        for (int i = 1904; i <= 2096; i += 4) {
-            System.out.println(i + " год является високосным.");
+        for (int i = 1904; i <= 2096; i ++) {
+            if (i % 4 == 0 && i % 100 != 0 || i % 400 == 0) {
+                System.out.println(i + " год является високосным.");
+            }
         }
         System.out.println();
 
@@ -46,18 +48,30 @@ public class Main {
 //        7 14 21 28 35 42 49 56 63 70 77 84 91 98
         System.out.println("Задача 2.2");
         for (int i = 7; i <= 98; i += 7) {
-            System.out.println(i);
+            System.out.print(i + " ");
         }
-        System.out.println();
+        System.out.println("\n");
 
-//        Задача 2.3
+//        Задача 2.3 (вариант 1)
 //        Напишите программу, которая выводит в консоль последовательность цифр:
 //        1 2 4 8 16 32 64 128 256 512
-        System.out.println("Задача 2.3");
+        System.out.println("Задача 2.3 (вариант 1)");
         for (int i = 1; i <= 512; i = i * 2) {
-            System.out.println(i);
+            System.out.print(i + " ");
         }
-        System.out.println();
+        System.out.println("\n");
+
+//        Задача 2.3 (вариант 2)
+//        Напишите программу, которая выводит в консоль последовательность цифр:
+//        1 2 4 8 16 32 64 128 256 512
+        System.out.println("Задача 2.3 (вариант 2)");
+        int number = 1;
+        System.out.print(number + " ");
+        for (int i = 1; i <= 9; i ++) {
+            number = number * 2;
+            System.out.print(number + " ");
+        }
+        System.out.println("\n");
 
 //        Задача 3.1
 //        Посчитайте с помощью цикла for сумму годовых накоплений, если каждый месяц вы будете откладывать
@@ -80,7 +94,7 @@ public class Main {
         int monthDeposit = 29_000;
         int totalDeposit = 0;
         for (int i = 1; i <= 12; i++) {
-            totalDeposit = (totalDeposit + monthDeposit);
+            totalDeposit = totalDeposit + monthDeposit;
             totalDeposit = totalDeposit + (totalDeposit / 100);
             System.out.println("Месяц " + i + " - сумма накоплений равна " + totalDeposit + " рублей");
         }
